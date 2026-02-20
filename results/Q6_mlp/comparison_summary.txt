@@ -1,0 +1,4 @@
+Comparison summary (VAL):
+Q6 MLP VAL acc = 0.949896
+Q3 Gaussian Bayes VAL acc = 0.905010
+Q5 SVM VAL acc = 0.943633

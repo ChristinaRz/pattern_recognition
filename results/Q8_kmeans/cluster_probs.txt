@@ -1,0 +1,9 @@
+Per-cluster probability vectors p_killer_k estimated from TRAIN counts (k=1..S):
+  cluster 0: p_killer_1=0.007380, p_killer_2=0.000000, p_killer_3=0.915129, p_killer_4=0.000000, p_killer_5=0.059041, p_killer_6=0.000000, p_killer_7=0.005535, p_killer_8=0.012915
+  cluster 1: p_killer_1=0.025707, p_killer_2=0.038560, p_killer_3=0.002571, p_killer_4=0.000000, p_killer_5=0.000000, p_killer_6=0.933162, p_killer_7=0.000000, p_killer_8=0.000000
+  cluster 2: p_killer_1=0.000000, p_killer_2=0.000000, p_killer_3=0.036269, p_killer_4=0.113990, p_killer_5=0.025907, p_killer_6=0.000000, p_killer_7=0.823834, p_killer_8=0.000000
+  cluster 3: p_killer_1=0.072289, p_killer_2=0.048193, p_killer_3=0.831325, p_killer_4=0.030120, p_killer_5=0.003012, p_killer_6=0.000000, p_killer_7=0.015060, p_killer_8=0.000000
+  cluster 4: p_killer_1=0.000000, p_killer_2=0.000000, p_killer_3=0.723288, p_killer_4=0.000000, p_killer_5=0.178082, p_killer_6=0.000000, p_killer_7=0.005479, p_killer_8=0.093151
+  cluster 5: p_killer_1=0.005208, p_killer_2=0.729167, p_killer_3=0.000000, p_killer_4=0.000000, p_killer_5=0.000000, p_killer_6=0.015625, p_killer_7=0.250000, p_killer_8=0.000000
+  cluster 6: p_killer_1=0.014245, p_killer_2=0.000000, p_killer_3=0.863248, p_killer_4=0.005698, p_killer_5=0.085470, p_killer_6=0.000000, p_killer_7=0.000000, p_killer_8=0.031339
+  cluster 7: p_killer_1=0.007353, p_killer_2=0.000000, p_killer_3=0.011029, p_killer_4=0.327206, p_killer_5=0.000000, p_killer_6=0.000000, p_killer_7=0.654412, p_killer_8=0.000000

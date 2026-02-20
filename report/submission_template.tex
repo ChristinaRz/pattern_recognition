@@ -1,0 +1,275 @@
+% ==============================================================
+%  PROJECT REPORT TEMPLATE (LIGHT VERSION)
+%  Who Is The Killer? — Piraeus Vice
+% ==============================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{mwe} % for example-image, example-image-duck, etc.
+
+\title{
+  Who Is The Killer?\\[0.3em]
+  {\large Piraeus Vice Pattern Recognition Project}
+}
+
+\author{
+  Student 1 Name (ID: 0000001) \\
+  Student 2 Name (ID: 0000002) \\
+  Student 3 Name (ID: 0000003) \\
+  \\[-0.3em]
+  Department of \dots \\
+  University of \dots
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Short summary of your approach and main findings.
+Mention the models you used (Bayes classifier, linear classifier, SVM,
+MLP, PCA, $k$-means) and the overall performance on the validation data.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% --------------------------------------------------------------
+\section{Introduction}
+
+Briefly describe the problem: identifying the most likely killer for
+each crime incident in the ``Piraeus Vice'' data set. Summarise the data
+structure at a high level and list the main steps of your analysis
+(Q1--Q8).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.55\textwidth]{example-image-duck}
+  \caption{Humorous placeholder: the ``prime suspect'' before any
+  machine learning. Replace this with a real illustrative figure (e.g.,
+  a high-level pipeline diagram of your method).}
+\end{figure}
+
+% --------------------------------------------------------------
+\section{Data description}
+
+Describe the dataset:
+TRAIN / VAL / TEST splits, number of incidents, continuous and
+categorical features, any preprocessing (standardisation, one-hot
+encoding).
+
+\subsection{Feature overview}
+
+You may reproduce a small table summarising the features:
+
+\begin{table}[h]
+  \centering
+  \caption{Example feature summary (replace with real one).}
+  \begin{tabular}{ll}
+    \toprule
+    Feature name       & Type \\
+    \midrule
+    hour\_float        & continuous \\
+    latitude           & continuous \\
+    longitude          & continuous \\
+    victim\_age        & continuous \\
+    weapon\_code       & categorical \\
+    scene\_type        & categorical \\
+    weather            & categorical \\
+    vic\_gender        & categorical \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --------------------------------------------------------------
+\section{Q1: Exploratory analysis}
+
+Include histograms or density plots for key continuous variables
+(hour, age, latitude, longitude). Compare a single Gaussian fit and a
+mixture of Gaussians for \texttt{hour\_float}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{example-image}
+  \caption{Placeholder: histogram and fitted curves for an example
+  feature (e.g.\ \texttt{hour\_float}). Replace with your actual
+  exploratory plot.}
+\end{figure}
+
+% --------------------------------------------------------------
+\section{Q2: Gaussian MLE per killer}
+
+Explain how you estimated the mean and covariance of the continuous
+features for each killer on TRAIN. Show at least one covariance heatmap
+and one 2D projection with ellipses per killer.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image-b}
+  \caption{Placeholder: covariance ``heatmap'' for a single killer.
+  Replace with your real covariance heatmap for the continuous features.}
+\end{figure}
+
+% --------------------------------------------------------------
+\section{Q3: Multiclass Gaussian Bayes classifier}
+
+Describe your implementation of the Gaussian Bayes classifier using the
+parameters from Q2. Report accuracy and a confusion matrix on the VAL
+split.
+
+\begin{table}[h]
+  \centering
+  \caption{Example confusion matrix for the Gaussian Bayes classifier
+  on VAL (numbers are illustrative only).}
+  \begin{tabular}{lcccc}
+    \toprule
+    True / Pred & 1 & 2 & 3 & 4 \\
+    \midrule
+    1           & 30 &  2 &  1 &  0 \\
+    2           &  3 & 25 &  4 &  1 \\
+    3           &  0 &  3 & 28 &  2 \\
+    4           &  1 &  0 &  2 & 29 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --------------------------------------------------------------
+\section{Q4: Linear classifier}
+
+Explain the linear model you used (linear network or softmax
+regression), the features, and training procedure. Report validation
+accuracy and confusion matrix; briefly compare with Q3.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{example-image-c}
+  \caption{Placeholder: decision regions of a linear classifier in a
+  2D PCA projection. In the final report show your own PCA plot with
+  approximate linear boundaries.}
+\end{figure}
+
+% --------------------------------------------------------------
+\section{Q5: Support Vector Machine}
+
+Describe the SVM setup (kernel, hyperparameter tuning, multiclass
+strategy). Report VAL accuracy and confusion matrix, and compare with
+Q3 and Q4.
+
+\begin{table}[h]
+  \centering
+  \caption{Example summary of validation accuracy for different models.}
+  \begin{tabular}{lcc}
+    \toprule
+    Model                  & VAL accuracy \\
+    \midrule
+    Gaussian Bayes         & 0.75 \\
+    Linear classifier      & 0.70 \\
+    SVM (RBF kernel)       & 0.81 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% --------------------------------------------------------------
+\section{Q6: Multi-Layer Perceptron}
+
+Summarise your MLP architecture (layers, activations), training
+procedure, and performance on VAL. Include a simple plot or table of
+feature importance (e.g.\ permutation importance).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{example-image}
+  \caption{Placeholder: bar plot of feature importance as estimated by
+  the MLP. Replace with your own figure showing which features matter
+  most for killer prediction.}
+\end{figure}
+
+% --------------------------------------------------------------
+\section{Q7: Principal Component Analysis}
+
+Describe how you applied PCA (preprocessing, number of components kept).
+Include a plot of eigenvalues versus component index and a PC1--PC2
+scatter plot coloured by predicted killer labels.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{example-image-a}
+  \caption{Placeholder: ``eigenvalues vs component index'' plot. In
+  practice this shows how much variance each principal component
+  explains.}
+\end{figure}
+
+% --------------------------------------------------------------
+\section{Q8: $k$-means in PCA space}
+
+Explain how you ran $k$-means on the PCA representation, how you mapped
+clusters to killers using majority vote on TRAIN, and how you evaluated
+accuracy on VAL. Show a PC1--PC2 scatter plot of TEST incidents coloured
+by your final predicted killer labels.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{example-image-duck}
+  \caption{Placeholder: clusters in 2D PCA space, coloured by predicted
+  killer. Ideally, your real figure will look less like ducks and more
+  like well-separated clusters.}
+\end{figure}
+
+% --------------------------------------------------------------
+\section{Discussion and conclusions}
+
+Summarise and compare the performance of all models (Bayes, linear,
+SVM, MLP, PCA+$k$-means). Discuss which features and methods were most
+helpful for identifying killers, and reflect on possible extensions
+(e.g.\ more complex generative models, temporal information).
+
+% --------------------------------------------------------------
+\section*{Code organisation}
+
+Briefly describe your Python code structure (scripts, notebooks, helper
+modules) and how to reproduce:
+\begin{itemize}
+  \item the main results and figures in this report;
+  \item the prediction file \texttt{submission.csv}.
+\end{itemize}
+
+% --------------------------------------------------------------
+\appendix
+
+\section{Additional figures and tables}
+
+Place any extra plots or tables here that do not fit into the main text.
+
+\section{LLM prompts and responses}
+
+If you used ChatGPT or any other LLM, list all prompts and the
+corresponding responses you used during the preparation of this project.
+
+\subsection*{Example format}
+
+\textbf{Prompt:}
+\begin{verbatim}
+Explain how to compute a covariance matrix from data.
+\end{verbatim}
+
+\textbf{Response:}
+\begin{verbatim}
+[Paste the model's response here...]
+\end{verbatim}
+
+\textbf{Comment:} We checked the formulas and then implemented them
+independently.
+
+\end{document}

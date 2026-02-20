@@ -1,0 +1,21 @@
+Q7 PCA summary
+Feature dimension d = 25
+PCA fitted on TRAIN only.
+
+Explained variance ratio (first 10 components):
+  PC1: evr=0.364838, cum=0.364838
+  PC2: evr=0.238633, cum=0.603471
+  PC3: evr=0.093468, cum=0.696939
+  PC4: evr=0.046335, cum=0.743273
+  PC5: evr=0.035566, cum=0.778839
+  PC6: evr=0.031658, cum=0.810497
+  PC7: evr=0.027829, cum=0.838326
+  PC8: evr=0.024555, cum=0.862881
+  PC9: evr=0.019269, cum=0.882150
+  PC10: evr=0.017234, cum=0.899384
+
+Reference m95 (smallest m with cumulative explained variance >= 0.95): m95 = 14
+Cumulative explained variance at m95: 0.954459
+
+Chosen elbow m (--m): m = 4
+Cumulative explained variance at elbow m: 0.743273

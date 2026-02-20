@@ -1,0 +1,6 @@
+Best MLP hyperparameters (selected by VAL accuracy):
+hidden_sizes = (128, 64)
+dropout      = 0.2
+lr           = 0.0005
+weight_decay = 0.0001
+VAL accuracy = 0.949896

@@ -1,0 +1,3 @@
+Best L2 = 0.0
+TRAIN accuracy = 0.876707
+VAL accuracy   = 0.866388

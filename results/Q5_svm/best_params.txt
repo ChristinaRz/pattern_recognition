@@ -1,0 +1,2 @@
+Best kernel = rbf
+Best params = {'C': 10.0, 'gamma': 0.01}

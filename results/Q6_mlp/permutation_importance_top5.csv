@@ -1,0 +1,6 @@
+rank,feature_index,feature_name,delta_A
+1,1,latitude,0.072443
+2,6,dist_precinct_km,0.065136
+3,3,victim_age,0.056994
+4,5,humidity,0.030063
+5,2,longitude,0.024217

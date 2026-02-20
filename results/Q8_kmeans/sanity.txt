@@ -1,0 +1,5 @@
+Sanity checks:
+ PCA fit on TRAIN only
+ k-means fit on TRAIN only (latent space)
+ cluster->killer mapping built using TRAIN labels only
+ submission schema uses p_killer_1..p_killer_S exactly

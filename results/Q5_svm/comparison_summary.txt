@@ -1,0 +1,9 @@
+Comparison summary (VAL):
+Q5 SVM VAL acc = 0.943633
+Q3 Gaussian Bayes VAL acc = 0.905010
+Q4 Linear SSE VAL acc = 0.866388
+
+Logic check:
+- Q4 is linear in full feature space -> cannot model nonlinear boundaries.
+- Q5 adds nonlinearity (RBF / poly-2) -> can improve when separation is nonlinear after encoding.
+- Q3 is generative on continuous features only -> strong if Gaussian assumption matches the data structure.
